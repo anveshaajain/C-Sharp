@@ -1,10 +1,24 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
-
-</Project>
+using System;
+class animal
+{
+    public void speak()
+    {
+        Console.WriteLine("Animal can speak through their own language");
+    }
+}
+class dog:animal
+{
+    public void bark()
+    {
+        Console.WriteLine("Dog barks");
+    }
+}
+class program
+{
+    static void Main()
+    {
+        dog d= new dog();   
+        d.speak();
+        d.bark();
+    }
+}
