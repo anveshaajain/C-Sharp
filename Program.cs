@@ -1,11 +1,26 @@
 ﻿using System;
 
-class lucky_ticket
+class Course
+{
+    protected void ShowDetails()
+    {
+        Console.WriteLine("Showing course details");
+    }
+}
+
+class OnlineCourse : Course
+{
+    public void Display()
+    {
+        ShowDetails();
+    }
+}
+
+class Program
 {
     static void Main()
     {
-        for(int i=1; i <=100; i++)
-            if (i%12==0)
-                Console.WriteLine("Lucky tickets are: "+ i);
+        var onlineCourse = new OnlineCourse();
+        onlineCourse.Display();
     }
 }
