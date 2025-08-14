@@ -1,25 +1,21 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.14.36327.8 d17.14
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "demo_of_encapsculation", "demo_of_encapsculation\demo_of_encapsculation.csproj", "{2605551F-C2BE-4907-8990-DEAEB8CF23AF}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2605551F-C2BE-4907-8990-DEAEB8CF23AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2605551F-C2BE-4907-8990-DEAEB8CF23AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2605551F-C2BE-4907-8990-DEAEB8CF23AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2605551F-C2BE-4907-8990-DEAEB8CF23AF}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {5C8E5CF7-97E2-40C3-B6E2-D142A9C7D21C}
-	EndGlobalSection
-EndGlobal
+using System;
+
+class Person
+{
+    private int age;
+    public int Age
+    {
+        get { return age; }
+        set { age = value; }
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Person p = new Person();
+        p.Age = 20;
+        Console.WriteLine("person age: " + p.Age);
+    }
+}
