@@ -1,0 +1,48 @@
+using System;
+
+interface Resizeable
+{
+    void ResizeWidth(int width);
+    void ResizeHeight(int height);
+}
+
+class Rectangle : Resizeable
+{
+    private int width;
+    private int height;
+
+    public Rectangle(int w, int h)
+    {
+        width = w;
+        height = h;
+    }
+
+    public void ResizeWidth(int newWidth)
+    {
+        width = newWidth;
+        Console.WriteLine("New width: " + width);
+    }
+
+    public void ResizeHeight(int newHeight)
+    {
+        height = newHeight;
+        Console.WriteLine("New height: " + height);
+    }
+
+    public void Display()
+    {
+        Console.WriteLine("Rectangle Dimensions => Width: " + width + " Height: " + height);
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Rectangle rect = new Rectangle(10, 20);
+        rect.Display();
+        rect.ResizeWidth(30);
+        rect.ResizeHeight(40);
+        rect.Display();
+    }
+}
