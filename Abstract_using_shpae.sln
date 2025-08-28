@@ -1,25 +1,54 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.14.36327.8 d17.14
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abstract_using_shpae", "Abstract_using_shpae\Abstract_using_shpae.csproj", "{0F18401C-B766-4612-BBA7-960953890AC5}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0F18401C-B766-4612-BBA7-960953890AC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0F18401C-B766-4612-BBA7-960953890AC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0F18401C-B766-4612-BBA7-960953890AC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0F18401C-B766-4612-BBA7-960953890AC5}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {0F6230E4-F948-4E3D-BF8A-DA1AAE22EF0E}
-	EndGlobalSection
-EndGlobal
+using System;
+abstract class Shape
+{
+    public abstract double calculateArea();
+    public abstract double calculatePermimeter();
+}
+class Circle : Shape
+{
+    private double radius;
+    public Circle(double r)
+    {
+        radius = r;
+    }
+    public override double calculateArea()
+    {
+        return Math.PI * radius * radius;
+    }
+    public override double calculatePermimeter()
+    {
+        return 2 * Math.PI * radius;
+    }
+}
+class Triangle : Shape
+{
+    private double a, b, c;
+    public Triangle (double side1, double side2, double side3)
+    {
+        a = side1;
+        b = side2;
+        c = side3;
+    }
+    public override double calculateArea()
+    {
+        double s = (a+b+c)/2;
+        return Math.Sqrt(s*(s-a)*(s-b)*(s-c));
+    }
+    public override double calculatePermimeter()
+    {
+        return a + b + c;
+    }
+}
+class Program
+{
+    static void Main(string[] args)
+    {
+        Shape circle =  new Circle(10);
+        Console.WriteLine("Circle Area:" + circle.calculateArea());
+        Console.WriteLine("Circle Permiter;" + circle.calculatePermimeter());
+
+        Shape triangle = new Triangle(3, 4, 5);
+        Console.WriteLine("Triangle Area:" + triangle.calculateArea());
+        Console.WriteLine(triangle.calculatePermimeter());
+    }
+}
