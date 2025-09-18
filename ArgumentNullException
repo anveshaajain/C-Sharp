@@ -1,0 +1,22 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Enter your name: ");
+        string name = Console.ReadLine();
+
+        try
+        {
+            if (string.IsNullOrEmpty(name))
+                throw new ArgumentNullException("Name cannot be empty.");
+
+            Console.WriteLine("Hello, " + name);
+        }
+        catch (ArgumentNullException ex)
+        {
+            Console.WriteLine("Error: " + ex.Message);
+        }
+    }
+}
