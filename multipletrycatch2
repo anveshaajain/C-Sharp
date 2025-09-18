@@ -1,0 +1,28 @@
+using System;
+class Program
+{
+    static void Main()
+    {
+        try
+        {
+            //nested try block
+            try
+            {
+                Console.WriteLine("Enter the divisor: ");
+                int divisor = Convert.ToInt32(Console.ReadLine());
+                int divisorByZero = 6 / divisor;
+                Console.WriteLine(divisorByZero);
+            }
+            //inner catch block 
+            catch (Exception e)
+            {
+                Console.WriteLine("Inner catch is Executed" + e.Message);
+            }
+        }
+        //outer catch block 
+        catch (DivideByZeroException e)
+        {
+            Console.WriteLine("Outer catch is ExEcuted "+ e.Message);
+        }
+    }
+}
