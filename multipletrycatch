@@ -1,0 +1,26 @@
+using System;
+class Program
+{
+    static void Main()
+    {
+        int divisor = 0;
+        try
+        {
+            //nested try block
+            try
+            {
+                int divisorByZero = 6 / divisor;
+            }
+            //inner catch block 
+            catch (IndexOutOfRangeException e)
+            {
+                Console.WriteLine("Inner catch is Executed" + e.Message);
+            }
+        }
+        //outer catch block 
+        catch (DivideByZeroException e)
+        {
+            Console.WriteLine("Outer catch is ExEcuted "+ e.Message);
+        }
+    }
+}
