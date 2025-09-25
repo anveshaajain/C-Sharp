@@ -1,0 +1,20 @@
+using System;
+using System.IO;
+
+class program
+{
+    static void Main()
+    {
+        string filepath = @"C:\Users\Student\Desktop\Anvesha-C#\source.txt";
+
+        using (StreamWriter writer = new StreamWriter(filepath))
+        {
+            writer.WriteLine("Hello Everyone!!");
+            writer.WriteLine("Welcome to the text file!!");
+            writer.WriteLine("this is source file!! ");
+        }
+
+        Console.WriteLine("Text has been written successfully in the file");
+        Console.WriteLine("Thank you");
+    }
+}
