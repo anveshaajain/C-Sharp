@@ -1,0 +1,18 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        List<int> num = new List<int>();
+        num.Add(1);
+        num.Add(2); 
+        num.Add(3);
+
+        num.RemoveAt(0);
+        foreach (int i in num)
+        {
+            Console.WriteLine(i);
+        }
+    }
+}
