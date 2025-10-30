@@ -1,0 +1,20 @@
+using System;
+using System.Collections.Generic;
+
+class program
+{
+    static void Main()
+    {
+        string[] names = { "Alice", "Bob", "Anna", "Mike", "Andrew", "John" };
+
+        var Anames = from name in names
+                     where name.StartsWith("A")
+                     select name;
+
+        Console.WriteLine("Names starting with 'A':");
+        foreach (var nam in Anames)
+        {
+            Console.WriteLine(nam);
+        }
+    }
+}
